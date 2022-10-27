@@ -1,9 +1,12 @@
 import './formInput.css';
 
 const FormInput = (props) => {
+  const { label, onChangeInputs, ...inputProps } = props;
+
   return (
     <div className="input-wrapper">
-      <input type='text' placeholder={props.placeholder} />
+      <label>{label}</label>
+      <input {...inputProps} onChange={onChangeInputs} />
     </div>
   )
 }
